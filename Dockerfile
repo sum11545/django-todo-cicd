@@ -4,6 +4,8 @@ WORKDIR /data
 
 RUN pip install django==3.2
 
+RUN apt-get update && apt-get install -y python3-distutils
+
 COPY . .
 
 RUN python manage.py migrate
